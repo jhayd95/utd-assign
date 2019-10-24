@@ -1,0 +1,45 @@
+package programs;
+import java.util.Scanner;
+public class AssignGrades {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		int best = 100;
+		
+		//initializes num students with user input
+		System.out.println("enter number of students:");
+		int numStudents = Integer.parseInt(scnr.nextLine());
+		
+		int[] scores = new int [numStudents];
+		
+		//initializes scores[i] with user input, can only enter as many grades as there are students
+		for (int i = 0; i < scores.length; i++) {
+			System.out.println("Enter scores:");
+			scores[i] = scnr.nextInt();
+		}
+		
+		//program takes scores entered by user, and runs the following code to decide which grade will be assigned.
+		for (int i = 0; i < scores.length; i++) {
+			char letterGrade;
+			
+			if (scores[i] >= best -10) {
+				 letterGrade = 'A';
+			}
+			else if (scores[i] >= best -20) {
+				 letterGrade = 'B';
+			}
+			else if (scores[i] >= best -30) {
+				 letterGrade = 'C';
+			}
+			else if (scores[i] >= best -40) {
+				 letterGrade = 'D';
+			}
+			else {
+				 letterGrade = 'F';
+			}
+			System.out.println("Student " + (i+1) + " scored " + scores[i] + ": Grade is " + letterGrade );
+
+		}
+	}
+
+}
